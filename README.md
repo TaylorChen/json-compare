@@ -1,4 +1,4 @@
-# demo-compare
+# json-compare
 
 ## Project setup
 ```
