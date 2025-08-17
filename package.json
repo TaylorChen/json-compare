@@ -1,11 +1,13 @@
 {
-  "name": "demo-compare",
-  "version": "0.1.0",
-  "private": true,
+  "name": "json-compare-vue",
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build:lib": "vue-cli-service build --target lib --name json-compare-vue src/index.js",
+    "lint": "vue-cli-service lint",
+    "prepublishOnly": "npm run build:lib"
   },
   "dependencies": {
     "ace-builds": "^1.43.2",
@@ -20,6 +22,34 @@
     "lz-string": "^1.5.0",
     "vue": "^3.0.0"
   },
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "files": [
+    "dist",
+    "src/assets/jsondiffpatch-html.css",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "main": "dist/json-compare-vue.common.js",
+  "module": "dist/json-compare-vue.esm.js",
+  "unpkg": "dist/json-compare-vue.umd.js",
+  "exports": {
+    ".": {
+      "import": "./dist/json-compare-vue.esm.js",
+      "require": "./dist/json-compare-vue.common.js"
+    }
+  },
+  "keywords": [
+    "json",
+    "diff",
+    "jsoneditor",
+    "vue",
+    "vue3",
+    "compare"
+  ],
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",

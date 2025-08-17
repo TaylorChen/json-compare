@@ -1,5 +1,3 @@
-<!-- Language: English | [简体中文](README.zh-CN.md) -->
-
 ## json-compare
 
 A local, front-end JSON comparison and editing tool built with Vue 3. The UI and interactions are inspired by `https://jsoneditoronline.org/`. It provides side-by-side JSON editing, formatting, minifying, key sorting, search, diff view, file import/export, URL sharing, and more.
@@ -41,42 +39,6 @@ npm run build
 ```bash
 npm run lint
 ```
-
-### Library Usage
-- Install (requires Vue 3 in the host project):
-```bash
-npm install json-compare-vue
-```
-
-- Global registration (plugin):
-```js
-import { createApp } from 'vue'
-import JsonCompareVue from 'json-compare-vue'
-import 'json-compare-vue/dist/json-compare-vue.css'
-import App from './App.vue'
-
-const app = createApp(App)
-app.use(JsonCompareVue) // registers component name "JsonDiff" by default
-app.mount('#app')
-```
-
-- Local registration (single component):
-```vue
-<template>
-  <JsonDiff />
-  <!-- Optionally place it within your own layout -->
-</template>
-
-<script setup>
-import { JsonDiff } from 'json-compare-vue'
-import 'json-compare-vue/dist/json-compare-vue.css'
-</script>
-```
-
-- Notes:
-  - This package treats `vue` as a peerDependency. Ensure Vue 3 is installed in the host project.
-  - Import the CSS from `json-compare-vue/dist/json-compare-vue.css` to render the editor and diff styles correctly.
-  - The bundle includes `jsoneditor`/`ace`/`jsondiffpatch`; for smaller apps consider code-splitting on your side if needed.
 
 ### Usage Guide
 1. Once opened, each of the two panes is an independent JSON editor. Use “Mode (Left/Right)” to switch between Tree/Code/Text.
